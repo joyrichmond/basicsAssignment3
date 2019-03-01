@@ -11,3 +11,9 @@
     </div>
   </div>
 </div>
+
+<button (click)="onLogClicks($event)">Display Details</button>
+<p *ngIf="toggleOn">Now you see me.</p>
+<ul>
+  <li *ngFor="let click of clickLog" [ngStyle]="{backgroundColor: getColor()}" [ngClass]="{ postFifth: clickCount >= 5 }">{{ clickLog[clickCount-1] }}</li>
+</ul>
