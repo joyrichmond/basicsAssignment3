@@ -15,7 +15,7 @@ export class AppComponent {
   clickLog = [];
 
   onLogClicks(event) {
-    if(this.toggleOn == false) {
+    if (this.toggleOn === false) {
       this.toggleOn = true;
     } else {
       this.toggleOn = false;
@@ -25,8 +25,8 @@ export class AppComponent {
   }
 
   getColor() {
-    if(this.clickCount >= 5) {
-      return "blue";
+    if (this.clickLog.length >= 5) {
+      return 'blue';
     }
   }
 }

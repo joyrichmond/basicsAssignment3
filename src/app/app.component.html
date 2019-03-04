@@ -13,7 +13,10 @@
 </div>
 
 <button (click)="onLogClicks($event)">Display Details</button>
-<p *ngIf="toggleOn">Now you see me.</p>
-<ul>
-  <li *ngFor="let click of clickLog" [ngStyle]="{backgroundColor: getColor()}" [ngClass]="{ postFifth: clickCount >= 5 }">{{ clickLog[clickCount-1] }}</li>
-</ul>
+<hr>
+<p *ngIf="toggleOn; else toggleSpace">Now you see me.</p>
+<ng-template #toggleSpace>
+  <br>
+</ng-template>
+<hr>
+<p *ngFor="let click of clickLog; index as i" [ngStyle]="{'background-color': i >= 4 ? 'blue' : 'white'}" [ngClass]="{ postFifth: i >= 4 }">{{ clickLog[i] }}</p>
